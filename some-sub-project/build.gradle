@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'io.logz'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    println ("add shadowed dependency")
+    compile project(path: ':shadowed-mysql-connector-java-8.0.17', configuration: 'shadow')
+    println ("shadowed dependency added")
+    println ("add mysql 5 dependency")
+    compile ('mysql:mysql-connector-java:5.1.34')
+    println ("mysql 5 dependency added")
+}
+

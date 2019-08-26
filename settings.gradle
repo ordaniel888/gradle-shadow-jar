@@ -1,0 +1,3 @@
+rootProject.name = 'gradle-shadow-jar'
+include ':some-sub-project',
+        ':shadowed-mysql-connector-java-8.0.17'

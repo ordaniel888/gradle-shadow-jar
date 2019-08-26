@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "4.0.4"
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar.enabled = false
+
+dependencies {
+    println("adding mysql 8 dependency")
+    compile ('mysql:mysql-connector-java:8.0.17')
+    println("mysql 8 dependency added")
+}
+
+shadowJar {
+    println("rellocating mysql 8")
+    relocate 'com.mysql', 'io.logz.com.mysql'
+    println("mysql 8 rellocated")
+}
